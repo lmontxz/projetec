@@ -3,6 +3,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Red+Hat+Text&family=Reem+Kufi&family=Salsa&display=swap');
 
 body {
+    min-height: 100%;
     margin: 0;
     background-color: #0F2026;
 }
@@ -101,7 +102,7 @@ img {
 }
 
 #psicos:hover {
-    background-color: #1d5863;
+    background-color: #0e7688b4;
     width: 90px;
     height: 55px;
     border-radius: 80px;
@@ -190,4 +191,35 @@ img {
     color: #fff;
     font-weight: bold;
     transition: 0.8s;
+}
+
+#ret3 {
+    top: 247px;
+    position: absolute;
+    width: 1920px;
+    height: 138px;
+    background: #4F75AD;
+}
+
+#TextoCabecalho {
+    position: absolute;
+    left: 8.85%;
+    right: 12.81%;
+    top: 285px;
+    bottom: 72.63%;
+    font-family: 'Reem Kufi';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 30px;
+    line-height: 40px;
+    color: #000000;
+}
+
+#ret4 {
+    left: 1674px;
+    top: 275px;
+    position: absolute;
+    width: 97px;
+    height: 97px;
+    background: #fff;
 }
