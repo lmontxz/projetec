@@ -1,0 +1,192 @@
+@import url('https://fonts.googleapis.com/css2?family=Salsa&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Reem+Kufi&family=Salsa&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Red+Hat+Text&family=Reem+Kufi&family=Salsa&display=swap');
+
+body {
+    margin: 0;
+}
+
+#barra_de_navegação {
+    position: absolute;
+    width: 1920px;
+    height: 150px;
+    background-color: #40C6DD;
+}
+
+img {
+    top: 34.4px;
+    position: absolute;
+    width: 100px;
+    height: 80px;
+    mix-blend-mode: darken;
+    backdrop-filter: blur(2px);
+}    
+
+#nome {
+    top: 40px;
+    position: absolute;
+    width: 481px;
+    height: 85.96px;
+    font-family: 'Salsa', cursive;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 40px;
+    line-height: 59px;
+    color: rgb(0, 0, 0);
+    left: 100px;
+}
+
+#menu {
+    position: absolute;
+    width: 88px;
+    height: 75px;
+    font-family: 'Reem Kufi', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 50px;
+    color: #000000;
+    top: 45px;
+    left: 600px;
+}
+
+#menu:hover {
+    background-color: #0e7688b4;
+    width: 50px;
+    height: 55px;
+    border-radius: 80px;
+    padding-inline-start: 10px;
+    padding-inline-end: 10px;
+    transition: 0.8s;
+}
+
+
+#devs {
+    position: absolute;
+    width: 241px;
+    height: 75px;
+    font-family: 'Reem Kufi', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 50px;
+    color: #000000;
+    top: 45px;
+    left: 691px;
+}
+
+#devs:hover {
+    background-color: #0e7688b4;
+    width: 150px;
+    height: 55px;
+    border-radius: 80px;
+    padding-inline-start: 10px;
+    padding-inline-end: 10px;
+    transition: 0.8s;
+}
+
+#psicos {
+    position: absolute;
+    width: 160px;
+    height: 75px;
+    font-family: 'Reem Kufi', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 50px;
+    color: #000000;
+    top: 45px;
+    left: 882px;
+}
+
+#psicos:hover {
+    background-color: #0e7688b4;
+    width: 90px;
+    height: 55px;
+    border-radius: 80px;
+    padding-inline-start: 10px;
+    padding-inline-end: 10px;
+    transition: 0.8s;
+}
+
+#entrar {
+    position: absolute;
+    width: 89px;
+    height: 44.08px;
+    font-family: 'Red Hat Text', sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 40px;
+    color: #FFFFFF;
+    left: 1050px;
+    top: 52px;
+}
+
+#entrar:hover {
+    color: #0e274df6;
+    font-weight: bold;
+    transition: 0.8s;
+}
+
+#login {
+    position: absolute;
+    width: 89px;
+    height: 44.08px;
+    font-family: 'Red Hat Text', sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 40px;
+    color: #FFFFFF;
+    left: 1184px;
+    top: 52px;
+}
+
+#login:hover {
+    color: #0e274df6;
+    font-weight: bold;
+    transition: 0.8s;
+}
+
+#ret1 {
+    top: 52px;
+    position: absolute;
+    width: 100px;
+    height: 40px;
+    background: #0066FF;
+    border-radius: 100px;
+    left: 1027px;
+}
+
+#ret2 {
+    top: 52px;
+    position: absolute;
+    width: 100px;
+    height: 40px;
+    background: #0066FF;
+    border-radius: 100px;
+    left: 1159px;
+    }
+
+#toggle {
+    display: block;
+    width: 35px;
+    height: 43px;
+    line-height: 38px;
+    background-color: #0066FF;
+    border-radius: 50px;
+    border-color: transparent;
+    padding-top: 2px;
+    color: #fff;
+    margin-left: 1300px;
+    margin-top: 52px;
+    font-size: small;
+    font-weight: lighter;
+}
+
+#toggle:hover {
+    color: #0e274df6;
+    font-weight: bold;
+    transition: 0.8s;
+}
