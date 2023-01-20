@@ -309,3 +309,29 @@ img {
     height: 97px;
     background: #fff;
 }
+
+#ret5 {
+    left: 1674px;
+    top: 275px;
+    position: absolute;
+    width: 200px;
+    height: 50px;
+    background: #fff;
+}
+
+#imagem {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #fff;
+    animation: go-back 1s infinite alternate;
+}
+  
+@keyframes go-back {
+    from {
+      transform: translateX(100px);
+    }
+    to {
+      transform: translateX(0);
+    }
+}
