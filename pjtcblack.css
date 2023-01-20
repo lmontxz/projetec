@@ -15,7 +15,7 @@ body {
     background-color: #2D7AED;
 }
 
-img {
+#logo {
     top: 34.4px;
     position: absolute;
     width: 100px;
@@ -319,7 +319,7 @@ img {
     background: #fff;
 }
 
-#imagem {
+/* #imagem {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -329,9 +329,131 @@ img {
   
 @keyframes go-back {
     from {
-      transform: translateX(100px);
+      transform: translateX(20px);
     }
     to {
       transform: translateX(0);
     }
+} */
+
+#ret6 {
+    width: 95%;
+    height: 490%;
+    top: 100%;
+    margin: 2%;
+    position: absolute;
+    background: #85AEEC;
+    border-radius: 30px
+}
+
+#imgfundo {
+    position: absolute;
+    width: 95%;
+    height: 490%;
+    top: 100%;
+    margin: 2%;
+    filter: blur(2px);
+    border-radius: 30px;
+} 
+
+#consulte {
+    position: absolute;
+    width: 407px;
+    height: 64px;
+    top: 135%;
+    left:5%;
+    font-family: 'Reem Kufi';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 35px;
+    line-height: 52px;
+    display: flex;
+    align-items: center;
+    color: #FFFFFF;
+}
+
+#cuide {
+    position: absolute;
+    width: 1050px;
+    height: 47px;
+    top: 220%;
+    left: 8%;
+    font-family: 'Reem Kufi';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 60px;
+    line-height: 90px;
+    display: flex;
+    align-items: center;
+    color: #FFFFFF;
+}
+
+#evite {
+    position: absolute;
+    width: 591px;
+    height: 47px;
+    top: 320%;
+    left: 8%;
+    font-family: 'Reem Kufi';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 25px;
+    line-height: 38px;
+    display: flex;
+    align-items: center;
+    color: #FFFFFF;
+}
+
+#ret7 {
+    top: 380%;
+    left: 5%;
+    position: absolute;
+    width: 300px;
+    height: 290px;
+    background: #3079E6;
+    border-radius: 40px;
+}
+
+#conheca {
+    position: absolute;
+    top: 400%;
+    left: 6.5%;
+    font-family: 'Reem Kufi';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 38px;
+    display: flex;
+    align-items: center;
+    color: #FFFFFF;
+}
+
+#ret8 {
+    top: 380%;
+    left: 23%;
+    position: absolute;
+    width: 300px;
+    height: 290px;
+    background: #3079E6;
+    border-radius: 40px;
+}
+
+#ret9 {
+    top: 380%;
+    left: 41%;
+    position: absolute;
+    width: 300px;
+    height: 290px;
+    background: #3079E6;
+    border-radius: 40px;
+}
+
+#ret10 {
+    top: 380%;
+    left: 59%;
+    position: absolute;
+    width: 300px;
+    height: 290px;
+    background: #3079E6;
+    border-radius: 40px;
 }
