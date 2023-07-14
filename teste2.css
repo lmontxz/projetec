@@ -369,6 +369,11 @@ button.createbtn i {
 
 .Biografia{
     background-color: #6B94FF;
-    width: 300px ;
-    height: 200px;
+    width: 80% ;
+    height: 490px;
+    margin:auto ;
+    border-radius: 30px;
+    margin-top: -28%;
+    margin-left: 20%;
+    
 }
