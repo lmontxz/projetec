@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="PT-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css?family=Bree+Serif&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Poppins&display=swap" rel="stylesheet">
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  <link rel="shortcut icon" type="imagex/png" href="https://i.ibb.co/km4SXZg/Prototipo-removebg-preview.png">
+
+  <title>Perfis</title>
+</head>
+
+<style>
+  * {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    background: #e9e9e9;
+    overflow-x: hidden;
+    padding-top: 90px;
+    font-family: "Poppins", sans-serif;
+    margin: 0 100px;
+  }
+
+  .cabecalho-perfil {
+    background: #fff;
+    width: 100%;
+    display: flex;
+    height: 190px;
+    position: relative;
+    box-shadow: 0px 3px 4px rgba(0, 0, 0, 0.2);
+    margin-top: 70px;
+  }
+
+  .perfil-img {
+    float: left;
+    width: 340px;
+    height: 200px;
+  }
+
+  .perfil-img img {
+    border-radius: 50%;
+    height: 170px;
+    width: 200px;
+    border: 5px solid #fff;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
+    position: absolute;
+    left: 50px;
+    top: 40px;
+    z-index: 5;
+    background: #fff;
+  }
+
+  .principal {
+    width: 100%;
+    display: flex;
+    padding-right: 15px;
+  }
+
+  .lado-perfil {
+    width: 300px;
+    background: #fff;
+    box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.2);
+    padding: 90px 30px 20px;
+    font-family: "Bree Serif", serif;
+    margin-left: 10px;
+    z-index: 99;
+  }
+
+  .lado-perfil p {
+    margin-bottom: 7px;
+    color: #333;
+    font-size: 14px;
+  }
+
+  .lado-perfil p i {
+    color: #e40046;
+    margin-right: 10px;
+  }
+
+  .telefone i {
+    transform: rotateY(180deg);
+    color: #e40046;
+  }
+
+  .perfil-btn {
+    display: flex;
+  }
+
+  button.chatbtn,
+  button.createbtn {
+    border: 0;
+    padding: 10px;
+    width: 100%;
+    border-radius: 3px;
+    background: #377FEC;
+    color: #fff;
+    font-family: "Bree Serif";
+    font-size: 1rem;
+    margin: 5px 2px;
+    cursor: pointer;
+    outline: none;
+    margin-bottom: 10px;
+    transition: background 0.3s ease-in-out;
+    box-shadow: 0px 5px 7px 0px rgba(0, 0, 0, 0.3);
+  }
+
+  button.chatbtn:hover,
+  button.createbtn:hover {
+    background: #2965c0;
+  }
+
+  button.chatbtn i,
+  button.createbtn i {
+    margin-right: 5px;
+  }
+
+  .avaliaçao-usuario {
+    display: flex;
+  }
+
+  .avaliaçao-usuario h3 {
+    font-size: 2.5rem;
+    font-weight: 200;
+    margin-right: 5px;
+    letter-spacing: 1px;
+    color: #666;
+  }
+
+  .avaliaçao-usuario .no-of-user-rate {
+    font-size: 0.9rem;
+  }
+
+  .rate {
+    padding-top: 6px;
+  }
+
+  .rate i {
+    font-size: 0.9rem;
+    color: rgba(228, 0, 70, 1);
+  }
+
+  .perfil-body {
+    width: 100%;
+    z-index: -1;
+  }
+
+  @media (max-width: 1100px) {
+    .lado-perfil {
+      width: 250px;
+      padding: 90px 15px 20px;
+    }
+
+    .perfil-img img {
+      height: 200px;
+      width: 200px;
+      left: 50px;
+      top: 50px;
+    }
+  }
+
+  @media (max-width: 900px) {
+    body {
+      margin: 0 20px;
+    }
+
+    .cabecalho-perfil {
+      display: flex;
+      height: 100%;
+      flex-direction: column;
+      text-align: center;
+      padding-bottom: 20px;
+    }
+
+    .perfil-img {
+      float: left;
+      width: 100%;
+      height: 200px;
+    }
+
+    .perfil-img img {
+      position: relative;
+      height: 200px;
+      width: 200px;
+      left: 0px;
+    }
+
+    .principal {
+      flex-direction: column;
+      padding-right: 0;
+    }
+
+    .lado-perfil {
+      width: 100%;
+      text-align: center;
+      padding: 20px;
+      margin: 5px 0;
+    }
+
+    .avaliaçao-usuario {
+      justify-content: center;
+    }
+  }
+
+  .Biografia {
+    position: relative;
+    margin-top: -560px;
+    background-color: #6B94FF;
+    width: auto;
+    height: auto;
+    border-radius: 30px;
+    margin-left: 360px;
+    padding-top: 20px;
+    padding-bottom: 30px;
+  }
+
+  @media (max-width: 768px) {
+
+    .Biografia {
+      height: 80vh;
+      width: 70vw;
+      margin: auto;
+      margin-top: 10%;
+
+    }
+
+    .Biografia h1 {
+      font-size: 18px;
+    }
+.Biografia h2 {
+  font-size: 15px;
+}
+
+.Biografia .txt {
+  font-size: 12px;
+}
+  }
+
+</style>
+
+<body>
+
+  {% include 'cabecalho.html' %}
+
+  <div class="container">
+    <div class="cabecalho-perfil"
+      style="background-image: url(https://i.ibb.co/0J9j4rq/Foto-de-Fundo-para-Linkedin-Amarelo-L-mpada-Minimalista.png);">
+      <div class="perfil-img">
+        <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/profile-sample2.jpg" alt="image" border="0"></a>
+      </div>
+    </div>
+
+    <div class="principal">
+
+      <div class="lado-esquerdo">
+
+        <div class="lado-perfil">
+
+          <div class="endereço">
+            <p id="cidade" class="cidade" style="font-size: 15px;">Belo Horizonte, Brasil</p>
+          </div>
+
+          <h1 class="nome" style="margin-top:25px;">Michele Soares</h1><br>
+
+          <p class="telefone"><i class="fa fa-phone"></i> (31) 91234-xxxx</p>
+
+          <p class="email"><i class="fa fa-envelope"></i> msoares80@gmail.com</p>
+
+          <div class="bio">
+
+            <h3>Sobre</h3>
+
+            <p class="bio">
+              <br>Conectado desde 2018<br><br>
+              Perfil verificado<br><br>
+              CRP-MG<br><br>
+              Estudou na UFMG<br><br>
+            </p>
+
+          </div>
+
+          <div class="perfil-btn">
+            <button class="chatbtn" id="chatBtn"><i class="fa fa-comment"></i>Seguir</button>
+            <button class="createbtn" id="Create-post" onclick="window.location.href='/agendamento'"><i
+                class="fa fa-plus"></i> Marcar consulta </button>
+          </div>
+
+          <!-- <div class="avaliaçao-usuario">
+            <h3 class="avaliac">4.5</h3>
+            <div class="rate">
+              <div class="star-outer">
+                <div class="star-inner">
+                  <i class="fa fa-star"></i>
+                  <i class="fa fa-star"></i>
+                  <i class="fa fa-star"></i>
+                  <i class="fa fa-star"></i>
+                  <i class="fa fa-star"></i>
+                </div>
+              </div>
+              <span class="no-of-user-rate"><span>123</span>&nbsp;&nbsp;reviews</span>
+            </div>
+          </div> -->
+        </div>
+
+      </div>
+    </div>
+    <div class="Biografia">
+      <h1 style="text-align: center; padding-top: 20px;">Pequena Biografia sobre mim</h1>
+      <h2 style="margin-left: 25px;">Olá!</h2>
+
+      <br>
+
+      <div class="txt">
+        <p style="margin-left: 25px; margin-right: 25px; text-align: justify;">
+          Meu nome é Claudia, sou Psicanalista (CRP-04/56951), em constante formação e Especialista em Saúde Mental.
+          Me apaixonei pela Psicanálise a partir da experiência e dos efeitos que eu senti na minha própria vida. A
+          partir
+          do momento em que encontrei um espaço para que eu pudesse falar e entender as minhas responsabilidades em
+          minhas
+          próprias queixas, pude me movimentar, entender melhor o que se passava comigo e ressignificar vários pontos da
+          minha
+          própria vida.
+        </P>
+      </div>
+
+
+
+    </div>
+
+</body>
+
+</html>

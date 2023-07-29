@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Reem+Kufi&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Salsa&display=swap" rel="stylesheet">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="font-awesome/css/font-awesome.min.css">
+    <link rel="shortcut icon" type="imagex/png" href="https://i.ibb.co/km4SXZg/Prototipo-removebg-preview.png">
+
+    <title>Psicologia para Todos</title>
+
+    <style>
+        
+        * {
+            padding: 0;
+            margin: 0;
+            text-decoration: none;
+            box-sizing: border-box;
+            font-family: Reem Kufi;
+        }
+
+        body {
+            background-color: aliceblue;
+            height: 100vh;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* NAVBAR */
+
+
+        main.cards {
+            display: flex;
+            padding-top: 3%;
+            display: flex;
+            align-items: center;
+            text-align: center;
+            justify-content: center;
+
+        }
+
+        main.cards section.card {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            background-color: #40C6DD;
+            padding: 2rem 2.5rem;
+            border-radius: 20px;
+            max-height: 256px;
+            max-width: 200px;
+            font-size: 13px;
+        }
+
+        main.cards section.card:hover {
+            background-color: #0c7d9181;
+            transition: 0.8s;
+        }
+
+        main.cards section.card:first-child {
+            margin-left: 0;
+        }
+
+        main.cards section.card .icon {
+            width: 56px;
+            height: 56px;
+        }
+
+        main.cards section.card img {
+            width: 100%;
+        }
+
+        main.cards section.card h3 {
+            font-size: 100%;
+            margin: 16px 0;
+            font-weight: bold;
+            margin-bottom: -5px;
+            color: black;
+        }
+
+        @media screen and (max-width: 720px) {
+
+            main.cards {
+                flex-direction: column;
+            }
+
+            main.cards section.card {
+                margin-left: 0;
+                margin-bottom: 32px;
+            }
+
+            main.cards div.espa {
+                height: 32px;
+            }
+
+            main.cards section.card:last-child {
+                margin-bottom: 0;
+            }
+        }
+
+        .corpo {
+            position: relative;
+            top: 10%;
+            background-color: #5995EE;
+            height: 75vh;
+            width: 95vw;
+            border-radius: 30px;
+            min-width: 200px;
+            text-align: center;
+            font-size: 20px;
+            background-image: url(https://i.ibb.co/bX3pts1/image-8.png);
+            background-repeat: no-repeat;
+            background-size: 100%;
+            width: 100%;
+            max-width: 80vw;
+        }
+
+        @media screen and (max-height: 768px) {
+            .corpo {
+                background-color: #5995EE;
+                ;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .corpo {
+                height: 115vh;
+                margin-top: 180px;
+                margin-left: 20px;
+                margin-right: 20px;
+                font-size: 60%;
+            }
+        }
+
+        .corpo h2 {
+            position: relative;
+            margin-top: 2%;
+            text-align: center;
+            font-size: 35px;
+            margin-bottom: 2%;
+        }
+
+        .txt {
+            position: absolute;
+            width: 100%;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+        
+    </style>
+
+</head>
+
+<body>
+
+    {% include 'cabecalho.html' %}
+
+    <div class="corpo">
+
+        <div class="txt">
+
+            <h2 style="font-size: clamp(1.75em,1em,3vw + 2.5em);">Cuide da sua saúde mental com <br><br> um dos nossos
+                psicólogos online</h2>
+
+            <span style="font-size: clamp(1.75em,1em,3vw + 2.5em);"> Marque sua consulta agora mesmo. Evite salas de
+                espera <br><br> e custos com deslocamento. </span>
+
+            <main class="cards">
+
+                <a target="" href='/navegar'>
+
+                    <section class="card">
+                    
+                        <div class="icon">
+                            <img src="https://i.ibb.co/CBP0Qw7/user.png" alt="Contate-nos">
+                        </div>
+    
+                        <h3>Conheça nossos psicólogos</h3>
+    
+                    </section>
+                </a> 
+
+                <div class="espa" style="width: 32px;"></div>
+
+                <a target="" href='/perfil'>
+
+                    <section class="card">
+
+                        <div class="icon">
+                            <img src="https://i.ibb.co/kMVzkkb/calendario.png" alt="Marque uma consulta">
+                        </div>
+    
+                        <h3>Marque seu atendimento</h3>
+                        
+                    </section>                
+                </a>
+
+
+        </div>
+
+
+        </main>
+
+    </div>
+
+</body>
+
+</html>
