@@ -14,7 +14,7 @@
 </head>
 
 <style>
-    
+  
     * {
         padding: 0;
         margin: 0;
@@ -27,18 +27,22 @@
         background-color: aliceblue;
     }
 
+  
+
     .perfis {
         width: 100%;
         display: flex;
         justify-content: center;
         align-self: center;
+        margin-top: 200px;
     }
 
     @media screen and (max-width: 720px) {
 
         .perfis {
-            width: 60vw;
-            margin: auto;
+        width: 60vw;
+        margin: auto;
+          display: inline;
         }
     }
 
@@ -158,6 +162,8 @@
 </style>
 
 <body>
+
+  {% include 'cabecalho.html' %}
 
     <div class="perfis">
 
