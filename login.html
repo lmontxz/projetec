@@ -8,10 +8,11 @@
     <link href="https://fonts.googleapis.com/css2?family=Reem+Kufi&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Salsa&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="shortcut icon" type="imagex/png" href="https://i.ibb.co/km4SXZg/Prototipo-removebg-preview.png">
+
     <title>Login</title>
 
     <style>
-        
         * {
             margin: 0;
             padding: 0;
@@ -40,7 +41,7 @@
         .content::before {
             content: "";
             position: absolute;
-            background-color: #40C6DD;
+            background-color: #5995EE;
             width: 40%;
             height: 100%;
             border-top-left-radius: 15px;
@@ -62,7 +63,7 @@
         }
 
         .segunda-descricao {
-            color: gray ;
+            color: gray;
         }
 
         .btn1 {
@@ -92,7 +93,7 @@
             font-weight: bold;
             width: 150px;
             align-self: center;
-            background-color: #40C6DD;
+            background-color: #5995EE;
             border: none;
             margin-top: 1rem;
             transition: 1s;
@@ -113,9 +114,9 @@
         }
 
         .primeira-coluna {
-           text-align: center;
-           width: 40%;
-           z-index: 10;
+            text-align: center;
+            width: 40%;
+            z-index: 10;
         }
 
         .segunda-coluna {
@@ -144,7 +145,7 @@
             text-align: center;
         }
 
-        .link-redes:not(:first-child){
+        .link-redes:not(:first-child) {
             margin-left: 10px;
         }
 
@@ -152,7 +153,7 @@
             transition: 1s;
         }
 
-        .link-redes:hover .item-redes{
+        .link-redes:hover .item-redes {
             background-color: #40C6DD;
             color: white;
             border-color: #40C6DD;
@@ -219,6 +220,7 @@
         .sign-in-js .second-content .segunda-coluna {
             z-index: 11;
         }
+
         .sign-in-js .second-content .primeira-coluna {
             z-index: 13;
         }
@@ -229,12 +231,12 @@
             border-bottom-left-radius: 0;
             border-top-right-radius: 15px;
             border-bottom-right-radius: 15px;
-            animation: slidein 1.3s; 
+            animation: slidein 1.3s;
             z-index: 12;
         }
 
         .sign-up-js .content::before {
-            animation: slideout 1.3s; 
+            animation: slideout 1.3s;
             z-index: 12;
         }
 
@@ -248,19 +250,19 @@
         }
 
         .sign-up-js .first-content .primeira-coluna {
-            z-index: 13;    
+            z-index: 13;
         }
 
         .sign-in-js .first-content .segunda-coluna {
             position: relative;
             z-index: -1;
-            animation: deslocamentoEsq .5s; 
-            }
+            animation: deslocamentoEsq .5s;
+        }
 
-            .sign-up-js .second-content .segunda-coluna {
+        .sign-up-js .second-content .segunda-coluna {
             position: relative;
             z-index: -1;
-            animation: deslocamentoDir .5s; 
+            animation: deslocamentoDir .5s;
         }
 
         @keyframes deslocamentoEsq {
@@ -343,153 +345,155 @@
             .content {
                 width: 100%;
                 height: 100%;
-    }
+            }
 
-    .content::before {
-        width: 100%;
-        height: 40%;
-        top: 0;
-        border-radius: 0;
-    }
+            .content::before {
+                width: 100%;
+                height: 40%;
+                top: 0;
+                border-radius: 0;
+            }
 
-    .first-content, .second-content {
-        flex-direction: column;
-        justify-content: space-around;
-    }
+            .first-content,
+            .second-content {
+                flex-direction: column;
+                justify-content: space-around;
+            }
 
-    .first-column, .second-column {
-        width: 100%;
-    }
-    
-    .sign-in-js .content::before {
-        top: 60%;
-        left: 0;
-        border-radius: 0;
+            .first-column,
+            .second-column {
+                width: 100%;
+            }
 
-    }
+            .sign-in-js .content::before {
+                top: 60%;
+                left: 0;
+                border-radius: 0;
 
-    .form {
-        width: 90%;
-    }
+            }
 
-    @keyframes deslocamentoEsq {
+            .form {
+                width: 90%;
+            }
 
-        from {
-            top: 0;
-            opacity: 1;
-            z-index: 12;
-        }
-    
-        25% {
-            top: -80px;
-            opacity: .5;
-        }
-    
-        50% {
-            top: -100px;
-            opacity: .2;
-        }
-    
-        to {
-            top: -110px;
-            opacity: 0;
-            z-index: -1;
-        }
-    }
-    
-    
-    @keyframes deslocamentoDir {
-    
-        from {
-            top: 0;
-            z-index: 12;
-        }
-    
-        25% {
-            top: 80px;
-        }
-    
-        50% {
-            top: 100px;
-        }
-    
-        to {
-            top: 110px;
-            z-index: -1;
-        }
-    }
-    
-    @keyframes slidein {
-    
-        from {
-            top: 0;
-            height: 40%;
-        }
-    
-        25% {
-            top: 5%;
-            height: 50%;
-        }
-    
-        50% {
-            top: 25%;
-            height: 60%;
-        }
-    
-        75% {
-            top: 45%;
-            height: 50%;
-        }
-    
-        to {
-            top: 60%;
-            height: 40%;
-        }
-    }
-    
-    @keyframes slideout {
-    
-        from {
-            top: 60%;
-            height: 40%;
-        }
-    
-        25% {
-            top: 45%;
-            height: 50%;
-        }
-    
-        50% {
-            top: 25%;
-            height: 60%;
-        }
-    
-        75% {
-            top: 5%;
-            height: 50%;
-        }
-    
-        to {
-            top: 0;
-            height: 40%;
-        }
-    }
-   
-}
+            @keyframes deslocamentoEsq {
 
-@media screen and (max-width: 740px) {
-    .form {
-        width: 50%;
-    }
-}
+                from {
+                    top: 0;
+                    opacity: 1;
+                    z-index: 12;
+                }
 
-@media screen and (max-width: 425px) {
-    .form {
-        width: 100%;
-    }
-}
+                25% {
+                    top: -80px;
+                    opacity: .5;
+                }
 
+                50% {
+                    top: -100px;
+                    opacity: .2;
+                }
+
+                to {
+                    top: -110px;
+                    opacity: 0;
+                    z-index: -1;
+                }
+            }
+
+
+            @keyframes deslocamentoDir {
+
+                from {
+                    top: 0;
+                    z-index: 12;
+                }
+
+                25% {
+                    top: 80px;
+                }
+
+                50% {
+                    top: 100px;
+                }
+
+                to {
+                    top: 110px;
+                    z-index: -1;
+                }
+            }
+
+            @keyframes slidein {
+
+                from {
+                    top: 0;
+                    height: 40%;
+                }
+
+                25% {
+                    top: 5%;
+                    height: 50%;
+                }
+
+                50% {
+                    top: 25%;
+                    height: 60%;
+                }
+
+                75% {
+                    top: 45%;
+                    height: 50%;
+                }
+
+                to {
+                    top: 60%;
+                    height: 40%;
+                }
+            }
+
+            @keyframes slideout {
+
+                from {
+                    top: 60%;
+                    height: 40%;
+                }
+
+                25% {
+                    top: 45%;
+                    height: 50%;
+                }
+
+                50% {
+                    top: 25%;
+                    height: 60%;
+                }
+
+                75% {
+                    top: 5%;
+                    height: 50%;
+                }
+
+                to {
+                    top: 0;
+                    height: 40%;
+                }
+            }
+
+        }
+
+        @media screen and (max-width: 740px) {
+            .form {
+                width: 50%;
+            }
+        }
+
+        @media screen and (max-width: 425px) {
+            .form {
+                width: 100%;
+            }
+        }
     </style>
+
 </head>
 
 <body>
@@ -510,26 +514,26 @@
 
             <div class="segunda-coluna">
 
-                <h2 class="titulo" style="color:#40C6DD;">Criar conta</h2>
+                <h2 class="titulo" style="color:#0066FF;">Criar conta</h2>
 
                 <div class="social-media">
 
                     <ul class="lista-redes">
 
                         <a href="#" class="link-redes">
-                            <li class="item-redes"> 
+                            <li class="item-redes">
                                 <i class="fa-brands fa-facebook"></i>
                             </li>
                         </a>
 
                         <a href="#" class="link-redes">
-                            <li class="item-redes"> 
+                            <li class="item-redes">
                                 <i class="fa-brands fa-instagram"></i>
                             </li>
                         </a>
 
                         <a href="#" class="link-redes">
-                            <li class="item-redes"> 
+                            <li class="item-redes">
                                 <i class="fa-brands fa-google"></i>
                             </li>
                         </a>
@@ -552,7 +556,7 @@
                         <input type="email" placeholder="E-mail">
                     </label>
 
-                    <label class= "label-input">
+                    <label class="label-input">
                         <i class="fa-solid fa-lock-open icon"></i>
                         <input type="password" placeholder="Senha">
                     </label>
@@ -580,26 +584,26 @@
 
             <div class="segunda-coluna">
 
-                <h2 class="titulo" style="color:#40C6DD;">Entrar</h2>
+                <h2 class="titulo" style="color:#0066FF;">Entrar</h2>
 
                 <div class="social-media">
 
                     <ul class="lista-redes">
 
                         <a href="#" class="link-redes">
-                            <li class="item-redes"> 
+                            <li class="item-redes">
                                 <i class="fa-brands fa-facebook"></i>
                             </li>
                         </a>
 
                         <a href="#" class="link-redes">
-                            <li class="item-redes"> 
+                            <li class="item-redes">
                                 <i class="fa-brands fa-instagram"></i>
                             </li>
                         </a>
 
                         <a href="#" class="link-redes">
-                            <li class="item-redes"> 
+                            <li class="item-redes">
                                 <i class="fa-brands fa-google"></i>
                             </li>
                         </a>
@@ -618,16 +622,16 @@
                             <i class="fa-regular fa-envelope icon"></i>
                             <input type="email" placeholder="E-mail">
                         </label>
-    
-                        <label class= "label-input">
+
+                        <label class="label-input">
                             <i class="fa-solid fa-lock-open icon"></i>
                             <input type="password" placeholder="Senha">
                         </label>
 
                         <a href="#" class="senha">Esqueci minha senha</a>
-    
+
                         <button class="btn2">Entrar</button>
-    
+
                     </form>
 
             </div>
@@ -637,13 +641,13 @@
     </div>
 
     <script>
-        
+
         var btnSignin = document.querySelector("#in");
         var btnSignup = document.querySelector("#up");
         var body = document.querySelector("body");
 
         btnSignin.addEventListener("click", function () {
-        body.className = "sign-in-js"; 
+            body.className = "sign-in-js";
         });
 
         btnSignup.addEventListener("click", function () {
