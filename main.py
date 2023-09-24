@@ -1,18 +1,46 @@
-from flask import Flask, render_template, request, redirect
+from flask import Flask, render_template, request, redirect, url_for
+from flask_mysqldb import MySQL
 
 app = Flask(__name__)
+
+app.config['MYSQL_HOST'] = 'localhost'
+app.config['MYSQL_USER'] = 'root'
+app.config['MYSQL_PASSWORD'] = ''
+app.config['MYSQL_DB'] = 'teste'
+
+mysql = MySQL(app)
+
 
 @app.route('/')
 def index():
     return render_template('home.html')
-  
+
+
 @app.route('/agendamento')
 def agen():
-  return render_template('agendamento.html', titulo= 'Agende sua Consulta')
+  return render_template('agendamento.html', titulo='Agende sua Consulta')
+
 
 @app.route('/login')
 def login():
-  return render_template('login.html', titulo= 'Login')
+    cur = mysql.connection.cursor()
+    cur.execute('SELECT * FROM clientes')
+    data = cur.fetchall()
+    cur.close()
+    return render_template('login.html', clientes=data)
+
+@app.route('/login', methods=['GET', 'POST'])
+def cadastrar():
+    if request.method == 'POST':
+        nome = request.form['nome']
+        email = request.form['email']
+        senha = request.form['senha']
+        cur = mysql.connection.cursor()
+        cur.execute('INSERT INTO clientes (nome, email, senha) VALUES (%s, %s, %s)', (nome, email, senha))
+        mysql.connection.commit()
+        cur.close()
+        return redirect(url_for('login'))
+    return render_template('cadastro.html')
 
 @app.route('/perfil')
 def perfil():
@@ -37,5 +65,9 @@ def psiquiatras():
 @app.route('/sobre')
 def sobre():
   return render_template('sobre.html', titulo= 'Sobre Nós')
+
+@app.route('/proximas')
+def proximas():
+  return render_template('proximas.html', titulo= 'Historico de Consultas')
 
 app.run(debug = True, host='0.0.0.0', port=100)
