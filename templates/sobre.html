@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Reem+Kufi&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Salsa&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;400&family=Salsa&display=swap" rel="stylesheet">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="font-awesome/css/font-awesome.min.css">
+    <link rel="shortcut icon" type="imagex/png" href="https://i.ibb.co/km4SXZg/Prototipo-removebg-preview.png">
+
+    <title>Sobre nós</title>
+</head>
+
+<style>
+
+    * {
+        padding: 0;
+        margin: 0;
+        text-decoration: none;
+        box-sizing: border-box;
+        font-family: Reem Kufi;
+    }
+
+    body {
+        background-color: aliceblue;
+        height: 100vh;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .box {
+        width: 600px;
+        margin: 100px auto;
+        margin-top: 220px;
+        background: #fff;
+        border-radius: 7px;
+        box-shadow: 1px 2px 4px rgba(0, 0, 0, .3);
+    }
+
+    .box .heading {
+        background: #5995EE;
+        border-radius: 7px 7px 0px 0px;
+        padding: 10px;
+        color: #fff;
+        text-align: center;
+        font-family: "Reem Kufi";
+    }
+
+    .faqs {
+        padding: 0px 20px 20px;
+    }
+
+    ::-webkit-details-marker {
+        float: right;
+        margin-top: 3px;
+    }
+
+    details {
+        background: #f6f6f6;
+        padding: 30px 20px;
+        border-radius: 7px;
+        margin-top: 20px;
+        font-size: 15px;
+        letter-spacing: 1px;
+        cursor: pointer;
+        margin-left: 15px;
+        margin-right: 15px;
+    }
+
+    details:hover {
+        transform: scale(1.1);
+        transition: .4s;
+    }
+
+    details summary {
+        outline: none;
+        font-size: 20px;
+    }
+
+    .texto {
+        font-family: Poppins;
+        font-weight: 400;
+        text-align: justify;
+    }
+
+</style>
+
+<body>
+
+    {% include 'cabecalho.html' %}
+
+    <div class="box">
+        <p class="heading">FAQs</p>
+        <div class="faqs">
+
+            <details>
+                <summary>Qual o tipo de serviço oferecido?</summary>
+                <br>
+                <p class="texto">Atendimento gratuito com profissionais da área da saúde.</p>
+            </details>
+
+            <details>
+                <summary>Qual o intuito do site?</summary>
+                <br>
+                <p class="texto"> O nosso objetivo é fazer com que o contato com os cuidados relacionados à saúde
+                    mental seja mais acessível à todos, se tornando um assunto sem estigmas e negligências.
+                    Além disso, como a ideia é que o serviço seja oferecido gratuitamente, os estudantes da área da
+                    psicologia que se dedicarem ao nosso site receberão horas complementares, que são de extrema
+                    imortância para a sua formação e qualificação. </p>
+            </details>
+
+            <details>
+                <summary> Quem pode usar o sistema?</summary>
+                <br>
+                <p class="texto">Todas as pessoas que têm interesse nos serviços oferecidos.</p>
+            </details>
+
+        </div>
+    </div>
+
+</body>
+
+</html>

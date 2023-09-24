@@ -1,0 +1,663 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Reem+Kufi&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Salsa&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="shortcut icon" type="imagex/png" href="https://i.ibb.co/km4SXZg/Prototipo-removebg-preview.png">
+
+    <title>Login</title>
+
+    <style>
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Reem Kufi;
+        }
+
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #86868638;
+        }
+
+        .content {
+            border-radius: 15px;
+            background-color: white;
+            width: 960px;
+            height: 60%;
+            justify-content: space-between;
+            align-items: center;
+            position: relative;
+        }
+
+        .content::before {
+            content: "";
+            position: absolute;
+            background-color: #5995EE;
+            width: 40%;
+            height: 100%;
+            border-top-left-radius: 15px;
+            border-bottom-left-radius: 15px;
+            left: 0;
+        }
+
+        .titulo {
+            color: fff;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .descricao {
+            font-size: 14px;
+            font-weight: 500;
+            line-height: 30px;
+            color: #000;
+        }
+
+        .segunda-descricao {
+            color: gray;
+        }
+
+        .btn1 {
+            border-radius: 20px;
+            text-transform: uppercase;
+            font-size: 10px;
+            padding: 10px 50px;
+            cursor: pointer;
+            background-color: transparent;
+            border: 1px solid #000;
+            font-weight: bold;
+            margin-top: 1rem;
+            transition: 1s;
+        }
+
+        .btn1:hover {
+            background-color: #2f646d;
+            color: #40C6DD;
+        }
+
+        .btn2 {
+            border-radius: 20px;
+            text-transform: uppercase;
+            font-size: 10px;
+            padding: 10px 50px;
+            cursor: pointer;
+            font-weight: bold;
+            width: 150px;
+            align-self: center;
+            background-color: #5995EE;
+            border: none;
+            margin-top: 1rem;
+            transition: 1s;
+        }
+
+        .btn2:hover {
+            background-color: white;
+            border: 1px solid #2f646d;
+            color: #000;
+        }
+
+        .first-content {
+            display: flex;
+        }
+
+        .first-content .segunda-coluna {
+            z-index: 11;
+        }
+
+        .primeira-coluna {
+            text-align: center;
+            width: 40%;
+            z-index: 10;
+        }
+
+        .segunda-coluna {
+            width: 60%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .item-redes {
+            margin: 1rem 0;
+        }
+
+        .lista-redes {
+            display: flex;
+            list-style-type: none;
+        }
+
+        .item-redes {
+            border: 1px solid;
+            color: gray;
+            border-radius: 50%;
+            width: 35px;
+            height: 35px;
+            line-height: 35px;
+            text-align: center;
+        }
+
+        .link-redes:not(:first-child) {
+            margin-left: 10px;
+        }
+
+        .link-redes .item-redes {
+            transition: 1s;
+        }
+
+        .link-redes:hover .item-redes {
+            background-color: #40C6DD;
+            color: white;
+            border-color: #40C6DD;
+            transition: .5s;
+        }
+
+        .form {
+            display: flex;
+            flex-direction: column;
+            width: 55%;
+        }
+
+        .form input {
+            height: 45px;
+            border: none;
+            background-color: transparent;
+            width: 100%;
+
+        }
+
+        .label-input {
+            background-color: rgba(90, 91, 116, 0.274);
+            display: flex;
+            align-items: center;
+            margin: 8px;
+        }
+
+        .icon {
+            color: gray;
+            padding: 5px;
+        }
+
+        .second-content {
+            position: absolute;
+            display: flex;
+        }
+
+        .second-content .primeira-coluna {
+            order: 2;
+            z-index: -1;
+        }
+
+        .second-content .segunda-coluna {
+            order: 1;
+            z-index: -1;
+        }
+
+        .senha {
+            color: rgb(92, 92, 92);
+            text-decoration: none;
+            font-size: 14px;
+            margin: 15px 0;
+            text-align: center;
+        }
+
+        .senha::first-letter {
+            transform: capitalize;
+        }
+
+        .sign-in-js .first-content .primeira-coluna {
+            z-index: -1;
+        }
+
+        .sign-in-js .second-content .segunda-coluna {
+            z-index: 11;
+        }
+
+        .sign-in-js .second-content .primeira-coluna {
+            z-index: 13;
+        }
+
+        .sign-in-js .content::before {
+            left: 60%;
+            border-top-left-radius: 0;
+            border-bottom-left-radius: 0;
+            border-top-right-radius: 15px;
+            border-bottom-right-radius: 15px;
+            animation: slidein 1.3s;
+            z-index: 12;
+        }
+
+        .sign-up-js .content::before {
+            animation: slideout 1.3s;
+            z-index: 12;
+        }
+
+        .sign-up-js .second-content .primeira-coluna,
+        .sign-up-js .second-content .primeira-coluna {
+            z-index: -1;
+        }
+
+        .sign-up-js .first-content .segunda-coluna {
+            z-index: 11;
+        }
+
+        .sign-up-js .first-content .primeira-coluna {
+            z-index: 13;
+        }
+
+        .sign-in-js .first-content .segunda-coluna {
+            position: relative;
+            z-index: -1;
+            animation: deslocamentoEsq .5s;
+        }
+
+        .sign-up-js .second-content .segunda-coluna {
+            position: relative;
+            z-index: -1;
+            animation: deslocamentoDir .5s;
+        }
+
+        @keyframes deslocamentoEsq {
+
+            from {
+                left: 0;
+                opacity: 1;
+                z-index: 12;
+            }
+
+            25% {
+                left: -80px;
+                opacity: .5;
+            }
+
+            50% {
+                left: -100px;
+                opacity: .2;
+            }
+
+            to {
+                left: -110px;
+                opacity: 0;
+                z-index: -1;
+            }
+        }
+
+
+        @keyframes deslocamentoDir {
+
+            from {
+                left: 0;
+                z-index: 12;
+            }
+
+            25% {
+                left: 80px;
+            }
+
+            50% {
+                left: 100px;
+            }
+
+            to {
+                left: 110px;
+                z-index: -1;
+            }
+        }
+
+
+        @keyframes slidein {
+
+            from {
+                left: 0;
+                width: 40%;
+            }
+
+
+            to {
+                left: 60%;
+                width: 40%;
+            }
+        }
+
+        @keyframes slideout {
+
+            from {
+                left: 60%;
+                width: 40%;
+            }
+
+
+            to {
+                left: 0;
+                width: 40%;
+            }
+        }
+
+        @media screen and (max-width: 1040px) {
+            .content {
+                width: 100%;
+                height: 100%;
+            }
+
+            .content::before {
+                width: 100%;
+                height: 40%;
+                top: 0;
+                border-radius: 0;
+            }
+
+            .first-content,
+            .second-content {
+                flex-direction: column;
+                justify-content: space-around;
+            }
+
+            .first-column,
+            .second-column {
+                width: 100%;
+            }
+
+            .sign-in-js .content::before {
+                top: 60%;
+                left: 0;
+                border-radius: 0;
+
+            }
+
+            .form {
+                width: 90%;
+            }
+
+            @keyframes deslocamentoEsq {
+
+                from {
+                    top: 0;
+                    opacity: 1;
+                    z-index: 12;
+                }
+
+                25% {
+                    top: -80px;
+                    opacity: .5;
+                }
+
+                50% {
+                    top: -100px;
+                    opacity: .2;
+                }
+
+                to {
+                    top: -110px;
+                    opacity: 0;
+                    z-index: -1;
+                }
+            }
+
+
+            @keyframes deslocamentoDir {
+
+                from {
+                    top: 0;
+                    z-index: 12;
+                }
+
+                25% {
+                    top: 80px;
+                }
+
+                50% {
+                    top: 100px;
+                }
+
+                to {
+                    top: 110px;
+                    z-index: -1;
+                }
+            }
+
+            @keyframes slidein {
+
+                from {
+                    top: 0;
+                    height: 40%;
+                }
+
+                25% {
+                    top: 5%;
+                    height: 50%;
+                }
+
+                50% {
+                    top: 25%;
+                    height: 60%;
+                }
+
+                75% {
+                    top: 45%;
+                    height: 50%;
+                }
+
+                to {
+                    top: 60%;
+                    height: 40%;
+                }
+            }
+
+            @keyframes slideout {
+
+                from {
+                    top: 60%;
+                    height: 40%;
+                }
+
+                25% {
+                    top: 45%;
+                    height: 50%;
+                }
+
+                50% {
+                    top: 25%;
+                    height: 60%;
+                }
+
+                75% {
+                    top: 5%;
+                    height: 50%;
+                }
+
+                to {
+                    top: 0;
+                    height: 40%;
+                }
+            }
+
+        }
+
+        @media screen and (max-width: 740px) {
+            .form {
+                width: 50%;
+            }
+        }
+
+        @media screen and (max-width: 425px) {
+            .form {
+                width: 100%;
+            }
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="container">
+
+        <div class="content first-content">
+
+            <div class="primeira-coluna">
+
+                <h2 class="titulo">Bem-vindo de volta!</h2>
+
+                <p class="descricao">Para se manter conectado, por favor, </p>
+                <p class="descricao">logue-se com suas informações pessoais</p>
+
+                <button id="in" class="btn1">Login</button>
+
+            </div>
+
+            <div class="segunda-coluna">
+
+                <h2 class="titulo" style="color:#0066FF;">Criar conta</h2>
+
+                <div class="social-media">
+
+                    <ul class="lista-redes">
+
+                        <a href="#" class="link-redes">
+                            <li class="item-redes">
+                                <i class="fa-brands fa-facebook"></i>
+                            </li>
+                        </a>
+
+                        <a href="#" class="link-redes">
+                            <li class="item-redes">
+                                <i class="fa-brands fa-instagram"></i>
+                            </li>
+                        </a>
+
+                        <a href="#" class="link-redes">
+                            <li class="item-redes">
+                                <i class="fa-brands fa-google"></i>
+                            </li>
+                        </a>
+
+                    </ul>
+
+                </div>
+
+                <p class="segunda-descricao">Ou utilize o e-mail para o registro</p>
+
+                <form class="form">
+
+                    <label class="label-input">
+                        <i class="fa-regular fa-user icon"></i>
+                        <input type="text" placeholder="Nome">
+                    </label>
+
+                    <label class="label-input">
+                        <i class="fa-regular fa-envelope icon"></i>
+                        <input type="email" placeholder="E-mail">
+                    </label>
+
+                    <label class="label-input">
+                        <i class="fa-solid fa-lock-open icon"></i>
+                        <input type="password" placeholder="Senha">
+                    </label>
+
+                    <button class="btn2"> <a href="{{ url_for('cadastrar') }}">Registrar</a></button>
+
+                </form>
+
+
+            </div>
+
+        </div>
+
+        <div class="content second-content">
+
+            <div class="primeira-coluna">
+
+                <h2 class="titulo">Olá!</h2>
+
+                <p class="descricao">Insira os seus dados pessoais</p>
+                <p class="descricao">e comece sua jornada conosco</p>
+
+                <button id="up" class="btn1">Registrar</button>
+
+            </div>
+
+            <div class="segunda-coluna">
+
+                <h2 class="titulo" style="color:#0066FF;">Entrar</h2>
+
+                <div class="social-media">
+
+                    <ul class="lista-redes">
+
+                        <a href="#" class="link-redes">
+                            <li class="item-redes">
+                                <i class="fa-brands fa-facebook"></i>
+                            </li>
+                        </a>
+
+                        <a href="#" class="link-redes">
+                            <li class="item-redes">
+                                <i class="fa-brands fa-instagram"></i>
+                            </li>
+                        </a>
+
+                        <a href="#" class="link-redes">
+                            <li class="item-redes">
+                                <i class="fa-brands fa-google"></i>
+                            </li>
+                        </a>
+
+                    </ul>
+
+                </div>
+
+                <p class="descricao">Ou utilize o e-mail para login</p>
+
+                <form class="form">
+
+                    <form class="form">
+
+                        <label class="label-input">
+                            <i class="fa-regular fa-envelope icon"></i>
+                            <input type="email" placeholder="E-mail">
+                        </label>
+
+                        <label class="label-input">
+                            <i class="fa-solid fa-lock-open icon"></i>
+                            <input type="password" placeholder="Senha">
+                        </label>
+
+                        <a href="#" class="senha">Esqueci minha senha</a>
+
+                        <button class="btn2">Entrar</button>
+
+                    </form>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <script>
+
+        var btnSignin = document.querySelector("#in");
+        var btnSignup = document.querySelector("#up");
+        var body = document.querySelector("body");
+
+        btnSignin.addEventListener("click", function () {
+            body.className = "sign-in-js";
+        });
+
+        btnSignup.addEventListener("click", function () {
+            body.className = "sign-up-js";
+        })
+
+    </script>
+
+</body>
+
+</html>

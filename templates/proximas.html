@@ -1,0 +1,618 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Reem+Kufi&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Salsa&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Reem+Kufi&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Salsa&display=swap" rel="stylesheet">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="font-awesome/css/font-awesome.min.css">
+    <link rel="shortcut icon" type="imagex/png" href="https://i.ibb.co/km4SXZg/Prototipo-removebg-preview.png">
+
+
+    <title>Meus Agendamentos</title>
+</head>
+
+<style>
+    :root {
+
+        --black: #252C46;
+        --grey: #D1D4DE;
+        --white: #F9FAFB;
+
+
+        --error: #BE3751;
+        --error-10: #F7F0F3;
+
+        --padding-l: 2rem;
+        --padding-xl: 3rem;
+
+        --margin-xs: .5rem;
+        --margin-s: 1rem;
+        --margin-m: 1.5rem;
+        --margin-l: 2rem;
+
+        --border-rad: 8px;
+        --border-rad-s: 4px;
+        --border-rad-xl: 50px;
+        --shadow: 2px 6px 6px rgba(16, 33, 55, 0.1), 0px 4px 4px rgba(0, 0, 0, 0.1);
+
+    }
+
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Reem Kufi"
+    }
+
+    html {
+        font-size: 62.5%;
+    }
+
+    /* ESTILO DO CALENDARIO */
+
+    .wrapper {
+        font-size: 1.7rem;
+        margin: 15px auto;
+        max-width: 1100px;
+    }
+
+    .container-calendar {
+        background: #ffffff;
+        padding: 15px;
+        max-width: 475px;
+        margin: 0 auto;
+        overflow: auto;
+    }
+
+    .button-container-calendar button {
+        cursor: pointer;
+        display: inline-block; 
+        zoom: 1;
+        background: #0066FF;
+        color: #fff;
+        border: none;
+        border-radius: 4px;
+        padding: 5px 10px;
+        font-size: larger;
+        top: 400px;
+    }
+
+    .table-calendar {
+        border-collapse: collapse;
+        width: 100%;
+        color: #000;
+    }
+
+    .table-calendar td,
+    .table-calendar th {
+        padding: 5px;
+        text-align: center;
+        vertical-align: top;
+        border: none;
+    }
+
+    .date-picker.selected {
+        font-weight: bold;
+        background-color: #5a9afa;
+        border-radius: 5px;
+    }
+
+    /* sunday */
+    .date-picker:nth-child(1) {
+        color: red;
+    }
+
+    /* friday 
+    .date-picker:nth-child(6) {
+        color: green;
+    } */
+
+    #monthAndYear {
+        text-align: center;
+        margin-top: -8px;
+        background-color: #0066FF;
+        color: rgb(255, 255, 255);
+        font-size: 2rem;
+        border-radius: 5px;
+    }
+
+    .button-container-calendar {
+        position: relative;
+    }
+
+    #previous {
+        float: left;
+        margin-top: 9px;
+        font-weight: 1.5rem;
+    }
+
+    #next {
+        float: right;
+        margin-top: 9px;
+    }
+
+    .footer-container-calendar {
+        margin-top: 1em;
+        border-top: 1px solid #dadada;
+        padding: 10px 0;
+    }
+
+    .footer-container-calendar select {
+        cursor: pointer;
+        display: inline-block;
+        zoom: 1;
+        background: #ffffff;
+        color: #585858;
+        border: 1px solid #bfc5c5;
+        border-radius: 3px;
+        padding: 5px 1em;
+    }
+
+    /* ESTILO DO CALENDARIO */
+
+
+    .tudo {
+        margin-top: 150px;
+    }
+
+    h1 {
+        font-weight: 700;
+        font-size: 5rem;
+        letter-spacing: -0.02em;
+        margin-bottom: var(--margin-l);
+    }
+
+    h2 {
+        font-size: 2rem;
+        font-weight: 600;
+        letter-spacing: -0.01em;
+    }
+
+    h3 {
+        font-size: 1.3rem;
+    }
+
+    p {
+        padding-bottom: 1rem;
+    }
+
+    #button {
+        background-color: #0066FF;
+        color: #fff;
+        border-radius: 50px;
+        border: none;
+        padding: 1rem 1.5rem;
+        font-size: 1.7rem;
+        font-weight: bold;
+        cursor: pointer;
+        transition: 0.15s;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    #button:hover {
+        background-color: #0c7d9181;
+    }
+
+
+    #button.active {
+        border: 3px solid var(--white);
+    }
+
+    #cab {
+        background-color: transparent;
+        color: white;
+    }
+
+    cab naveg {
+        padding: 1.5rem;
+        display: flex;
+        justify-content: center;
+        gap: 1rem;
+    }
+
+    naveg a {
+        font-weight: 600;
+        border: 1px solid var(--white);
+        padding: 1rem;
+        border-radius: var(--border-rad-xl);
+    }
+
+    .container {
+        background-color: var(--white);
+        max-width: 80vw;
+        padding: 1.5rem var(--padding-l) var(--padding-l);
+        margin: var(--margin-m) auto;
+        border: 3px solid var(--grey);
+        border-radius: var(--border-rad);
+    }
+
+    .tab:nth-child(2) {
+        display: none;
+    }
+
+    .corpo-container-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        column-gap: 2rem;
+        row-gap: var(--margin-s);
+        margin-top: var(--margin-m);
+    }
+
+    .corpo {
+        border-radius: var(--border-rad-s);
+        border: 1px solid #E5E8F3;
+
+    }
+
+    .div-corpo {
+        padding: 1.5rem 0;
+        background-color: var(--black);
+        color: var(--white);
+        font-weight: bold;
+        text-align: center;
+        border-radius: var(--border-rad-s) var(--border-rad-s) 0 0;
+    }
+
+    .corpo-content {
+        padding: 1.5rem 1rem;
+    }
+
+    .campo-hora {
+        display: block;
+        padding: 1rem;
+        background-color: #0066FF;
+        color: #0066FF;
+        border-radius: var(--border-rad-s);
+        text-align: center;
+        margin-bottom: var(--margin-s);
+        cursor: pointer;
+        font-weight: 600;
+    }
+
+    .campo-hora:hover,
+    .campo-hora:focus {
+        background-color: #0066FF;
+        color: var(--white);
+    }
+
+
+    .campo-hora.selected {
+        background-color: #0066FF;
+        color: white;
+        font-size: 2rem;
+    }
+
+    .campo-hora.reservad {
+        background-color: var(--error-10);
+        color: var(--error);
+    }
+
+    button.selected-date {
+        background-color: #0066FF;
+        color: var(--white);
+    }
+
+    .minhas-reservas-table {
+        display: table;
+        width: 100%;
+        box-shadow: var(--shadow);
+        border-radius: var(--border-rad-s);
+        font-size: 1.5rem;
+    }
+
+    .minhas-reservas-table-row {
+        display: table-row;
+        border: 1px solid var(--grey);
+        border-radius: var(--border-rad-s);
+        font-size: 1.5rem;
+        color: #5995EE;
+    }
+
+    .minhas-reservas-table-cab {
+        display: table-header-group;
+        background-color: var(--black);
+        font-weight: bold;
+        color: white;
+        border-radius: var(--border-rad-s);
+    }
+
+
+    .minhas-reservas-table-cell {
+        display: table-cell;
+        padding: 1rem 1.5rem;
+        text-align: left;
+        font-size: 2rem;
+    }
+
+    @media only screen and (max-width:800px) {
+        .corpo-container-grid {
+            grid-template-columns: 1fr;
+        }
+    }
+</style>
+
+<body>
+
+    {% include 'cabecalho.html' %}
+
+    <div class="tudo">
+        <cab>
+
+            <naveg>
+                <button class="tablink active" id="button" onClick="openTab(this, 'reserva')">Minhas Consultas</button>
+                <button class="tablink" id="button" onClick="openTab(this, 'minhas-reservas')">Histórico</button>
+            </naveg>
+
+        </cab>
+
+        <main>
+
+            <div class="container">
+
+                <div class="tab" id="reserva">
+                    <h1 style="color: #5995EE;">Futuras Consultas</h1>
+                    <div class="corpo-container-grid">
+                        <div class="corpo">
+                            <div class="div-corpo">
+                                <h2>Agenda</h2>
+                            </div>
+
+                            <!-- CAMPO DO CALENDARIO -->
+
+                            <div class="wrapper">
+                                <div class="container-calendar">
+                                    <div class="button-container-calendar">
+                                        <button id="previous" onclick="previous()">&#8249;</button>
+                                        <button id="next" onclick="next()">&#8250;</button>
+                                        <h3 id="monthAndYear"></h3>
+                                    </div>
+
+                                    <table class="table-calendar" id="calendar" data-lang="pt-br">
+                                        <thead id="thead-month"></thead>
+                                        <tbody id="calendar-body"></tbody>
+                                    </table>
+
+                                    <div class="footer-container-calendar">
+                                        <label for="month"> Ir Para:</label>
+                                        <select id="month" onchange="jump()">
+                                            <option value=0>Jan</option>
+                                            <option value=1>Fev</option>
+                                            <option value=2>Mar</option>
+                                            <option value=3>Abr</option>
+                                            <option value=4>Mai</option>
+                                            <option value=5>Jun</option>
+                                            <option value=6>Jul</option>
+                                            <option value=7>Ago</option>
+                                            <option value=8>Set</option>
+                                            <option value=9>Out</option>
+                                            <option value=10>Nov</option>
+                                            <option value=11>Dez</option>
+                                        </select>
+                                        <select id="year" onchange="jump()"></select>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- CAMPO DO CALENDARIO -->
+
+                        </div>
+                        <div class="corpo">
+                            <div class="div-corpo">
+                                <h2> Horário </h2>
+                            </div>
+                            <div class="corpo-content">
+                                <div class="campo-hora selected">10:00 – 11:00</div>
+
+                            </div>
+                        </div>
+                        <div class="corpo">
+                            <div class="div-corpo">
+                                <h2>Profissional</h2>
+                            </div>
+                            <div class="corpo-content">
+                                <div class="campo-hora selected">Michele Soares</div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tab" id="minhas-reservas">
+                    <h1 style="color: #5995EE;">Consultas Antigas</h1>
+                    <div class="minhas-reservas-table">
+
+                        <div class="minhas-reservas-table-cab">
+                            <div class="minhas-reservas-table-row">
+                                <div class="minhas-reservas-table-cell" style="color:white;">Dia</div>
+                                <div class="minhas-reservas-table-cell"  style="color:white;">Horário</div>
+                                <div class="minhas-reservas-table-cell"  style="color:white;">Profissional</div>
+                            </div>
+                        </div>
+
+                        <div class="minhas-reservas-table-row">
+                            <div class="minhas-reservas-table-cell">
+                                <time datetime="#">19.05.2023</time>
+                            </div>
+                            <div class="minhas-reservas-table-cell">
+                                <time>13:00 – 14:00</time>
+                            </div>
+                            <div class="minhas-reservas-table-cell">Michele Soares</div>
+                        </div>
+                        <div class="minhas-reservas-table-row">
+                            <div class="minhas-reservas-table-cell">
+                                <time datetime="#">05.06.2023</time>
+                            </div>
+                            <div class="minhas-reservas-table-cell">
+                                <time>9:00 – 10:00</time>
+                            </div>
+                            <div class="minhas-reservas-table-cell">Rodrigo Oliveira</div>
+                        </div>
+                        <div class="minhas-reservas-table-row">
+                            <div class="minhas-reservas-table-cell">
+                                <time datetime="#">13.04.2023</time>
+                            </div>
+                            <div class="minhas-reservas-table-cell">
+                                <time>12:00 – 13:00</time>
+                            </div>
+                            <div class="minhas-reservas-table-cell">Marcos Campos</div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </main>
+    </div>
+
+</body>
+
+<script>
+
+    function openTab(element, id) {
+        var i, tabs, tablinks;
+
+        tabs = document.getElementsByClassName("tab");
+
+        for (i = 0; i < tabs.length; i++) {
+            tabs[i].style.display = "none";
+        }
+
+        tablinks = document.getElementsByClassName("tablink");
+
+        for (i = 0; i < tablinks.length; i++) {
+            tablinks[i].classList.remove("active");
+        }
+
+        document.getElementById(id).style.display = "block";
+        element.classList.add("active");
+    }
+
+    //<< SCRIPT DO CALENDARIO >>//
+
+    function generate_year_range(start, end) {
+        var years = "";
+        for (var year = start; year <= end; year++) {
+            years += "<option value='" + year + "'>" + year + "</option>";
+        }
+        return years;
+    }
+
+    var today = new Date();
+    var currentMonth = today.getMonth();
+    var currentYear = today.getFullYear();
+    var selectYear = document.getElementById("year");
+    var selectMonth = document.getElementById("month");
+
+
+    var createYear = generate_year_range(1970, currentYear);
+
+
+    document.getElementById("year").innerHTML = createYear;
+
+    var calendar = document.getElementById("calendar");
+    var lang = calendar.getAttribute('data-lang');
+
+    var months = ["Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho", "Julho", "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro"];
+    var days = ["DOM", "SEG", "TER", "QUA", "QUI", "SEX", "SAB"];
+
+    var dayHeader = "<tr>";
+    for (day in days) {
+        dayHeader += "<th data-days='" + days[day] + "'>" + days[day] + "</th>";
+    }
+    dayHeader += "</tr>";
+
+    document.getElementById("thead-month").innerHTML = dayHeader;
+
+
+    monthAndYear = document.getElementById("monthAndYear");
+    showCalendar(currentMonth, currentYear);
+
+
+
+    function next() {
+        currentYear = (currentMonth === 11) ? currentYear + 1 : currentYear;
+        currentMonth = (currentMonth + 1) % 12;
+        showCalendar(currentMonth, currentYear);
+    }
+
+    function previous() {
+        currentYear = (currentMonth === 0) ? currentYear - 1 : currentYear;
+        currentMonth = (currentMonth === 0) ? 11 : currentMonth - 1;
+        showCalendar(currentMonth, currentYear);
+    }
+
+    function jump() {
+        currentYear = parseInt(selectYear.value);
+        currentMonth = parseInt(selectMonth.value);
+        showCalendar(currentMonth, currentYear);
+    }
+
+    function showCalendar(month, year) {
+
+        var firstDay = (new Date(year, month)).getDay();
+
+        tbl = document.getElementById("calendar-body");
+
+
+        tbl.innerHTML = " ";
+
+
+        monthAndYear.innerHTML = months[month] + '<br>' + year;
+        selectYear.value = year;
+        selectMonth.value = month;
+
+        // creating all cells
+        var date = 1;
+        for (var i = 0; i < 6; i++) {
+            var row = document.createElement("tr");
+
+            for (var j = 0; j < 7; j++) {
+                if (i === 0 && j < firstDay) {
+                    cell = document.createElement("td");
+                    cellText = document.createTextNode("");
+                    cell.appendChild(cellText);
+                    row.appendChild(cell);
+                } else if (date > daysInMonth(month, year)) {
+                    break;
+                } else {
+                    cell = document.createElement("td");
+                    cell.setAttribute("data-date", date);
+                    cell.setAttribute("data-month", month + 1);
+                    cell.setAttribute("data-year", year);
+                    cell.setAttribute("data-month_name", months[month]);
+                    cell.className = "date-picker";
+                    cell.innerHTML = "<span>" + date + "</span>";
+
+                    if (date === today.getDate() && year === today.getFullYear() && month === today.getMonth()) {
+                        cell.className = "date-picker selected";
+                    }
+                    row.appendChild(cell);
+                    date++;
+                }
+
+
+            }
+
+            tbl.appendChild(row);
+        }
+
+    }
+
+    function daysInMonth(iMonth, iYear) {
+        return 32 - new Date(iYear, iMonth, 32).getDate();
+    }
+
+
+</script>
+
+
+</html>

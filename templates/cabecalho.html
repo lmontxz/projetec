@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Reem+Kufi&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Salsa&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+
+    <style>
+        
+        * {
+            text-decoration: none;
+            font-family: 'Reem Kufi';
+        }
+
+        p.logo {
+            font-weight: bold;
+        }
+
+        /* body {
+            font-family: 'Open Sans', sans-serif;
+            font-weight: 300;
+            line-height: 1.42em;
+            background-color: #ffffff;
+            font-family: Reem Kufi;
+            color: #000;
+
+        }  */
+
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background-color: #40C6DD;
+            padding: 30px 7%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            z-index: 1000;
+            text-decoration: none;
+        }
+
+        header .logo {
+            font-weight: bolder;
+            font-size: 35px;
+            color: rgb(0, 0, 0);
+            font-family: Salsa;
+        }
+
+        header .navbar ul {
+            list-style: none;
+            border-radius: 20px;
+        }
+
+        header .navbar ul li {
+            position: relative;
+            float: left;
+        }
+
+        header .navbar ul li a {
+            font-size: 20px;
+            padding: 20px;
+            color: rgb(0, 0, 0);
+            display: block;
+        }
+
+        header .navbar ul li a:hover {
+            background: #0c7d9181;
+            color: aliceblue;
+            transition: .5s;
+        }
+
+        #registrar:hover {
+            border-radius: 50px;
+            transition: 1s;
+        }
+
+        #entrar:hover {
+            border-radius: 50px;
+            transition: 1s;
+        }
+
+        header .navbar ul li ul {
+            position: absolute;
+            left: 0;
+            width: 200px;
+            background-color: #40C6DD;
+            display: none;
+        }
+
+        header .navbar ul li ul li {
+            width: 100%;
+            border-top: 1px solid black;
+        }
+
+        header .navbar ul li ul li ul {
+            left: 200px;
+            top: 0;
+        }
+
+        header .navbar ul li:hover>ul {
+            display: initial;
+            transition: .5s;
+        }
+
+        #menu-bar {
+            display: none;
+        }
+
+        header label {
+            font-size: 20px;
+            color: black;
+            cursor: pointer;
+            display: none;
+        }
+
+        #toggle {
+            position: relative;
+            display: block;
+            width: 35px;
+            height: 43px;
+            background-color: #0066FF;
+            border-radius: 50px;
+            border-color: transparent;
+            color: #fff;
+            font-size: small;
+            font-weight: lighter;
+            position: absolute;
+            right: 45px;
+            top: 35.5%
+        }
+
+        #toggle:hover {
+            color: #000000;
+            font-weight: bold;
+            transition: 0.8s;
+        }
+
+        @media(max-width:991px) {
+
+            a.logo {
+                font-size: 20px;
+            }
+
+            header {
+                padding: 20px;
+            }
+
+            header label {
+                display: initial;
+            }
+
+            header .navbar {
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background-color: aliceblue;
+                border-top: 1px solid #0c7d9181;
+                display: none;
+
+            }
+
+            header .navbar ul li {
+                width: 100%;
+            }
+
+            header .navbar ul li ul {
+                position: relative;
+                width: 100%;
+            }
+
+            header .navbar ul li ul li {
+                background-color: aliceblue;
+            }
+
+            header .navbar ul li ul li ul {
+                width: 100%;
+                left: 0;
+            }
+
+            #menu-bar:checked~.navbar {
+                display: initial;
+            }
+
+            #toggle {
+                visibility: hidden;
+            }
+
+        }
+    </style>
+
+    <header>
+
+        <a href="/" class="logo">Psicologia para Todos</a>
+
+        <input type="checkbox" id="menu-bar">
+        <label for="menu-bar">Menu</label>
+
+        <nav class="navbar">
+            <ul>
+                <li><a href="#">Informações</a>
+                    <ul>
+                        <li><a href="/sobre">Sobre nós</a></li>
+                        <!-- <li><a href="#">Chamadas com Psicólogos</a></li> -->
+                    </ul>
+                </li>
+                <li><a href="#">Contatos</a>
+                    <ul>
+                        <li><a href="/psicologos">Psicólogos</a></li>
+                        <li><a href="/psiquiatras">Psquiatras</a></li>
+                        <li><a href="/psicanalistas">Psicanalistas</a></li>
+                    </ul>
+                </li>
+
+                <li
+                    style="background-color:#0066FF; border-radius: 50px; margin-left: 10px; max-width: 40vw; text-align: center;">
+                    <a href='/login' id="registrar">Registrar</a>
+                </li>
+                <li
+                    style="background-color:#0066FF; border-radius: 50px; margin-left: 10px; max-width: 40vw; text-align: center;">
+                    <a href='login' id="entrar">Entrar</a>
+                </li>
+            </ul>
+
+            <button id="toggle">
+                <i class="fa fa-lg fa-bars"></i>
+            </button>
+
+        </nav>
+    </header>
+    {% block content %}
+    {% endblock %}
+</body>
+
+</html>
