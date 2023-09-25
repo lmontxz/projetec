@@ -6,41 +6,35 @@ app = Flask(__name__)
 app.config['MYSQL_HOST'] = 'localhost'
 app.config['MYSQL_USER'] = 'root'
 app.config['MYSQL_PASSWORD'] = ''
-app.config['MYSQL_DB'] = 'teste'
+app.config['MYSQL_DB'] = 'af'
 
 mysql = MySQL(app)
 
-
 @app.route('/')
 def index():
-    return render_template('home.html')
-
-
-@app.route('/agendamento')
-def agen():
-  return render_template('agendamento.html', titulo='Agende sua Consulta')
-
-
-@app.route('/login')
-def login():
     cur = mysql.connection.cursor()
-    cur.execute('SELECT * FROM clientes')
+    cur.execute('SELECT * FROM login')
     data = cur.fetchall()
     cur.close()
-    return render_template('login.html', clientes=data)
+    return render_template('home.html', login=data)
 
 @app.route('/login', methods=['GET', 'POST'])
-def cadastrar():
+def login():
     if request.method == 'POST':
         nome = request.form['nome']
         email = request.form['email']
         senha = request.form['senha']
         cur = mysql.connection.cursor()
-        cur.execute('INSERT INTO clientes (nome, email, senha) VALUES (%s, %s, %s)', (nome, email, senha))
+        cur.execute('INSERT INTO login (nome, email, senha) VALUES (%s, %s, %s)', (nome, email, senha))
         mysql.connection.commit()
         cur.close()
-        return redirect(url_for('login'))
-    return render_template('cadastro.html')
+        return redirect(url_for('index'))
+    return render_template('login.html')
+
+@app.route('/agendamento')
+def agen():
+  return render_template('agendamento.html', titulo='Agende sua Consulta')
+
 
 @app.route('/perfil')
 def perfil():
