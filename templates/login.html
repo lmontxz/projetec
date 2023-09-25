@@ -547,24 +547,22 @@
 
                 <form class="form">
 
-                    <label class="label-input">
-                        <i class="fa-regular fa-user icon"></i>
-                        <input type="text" placeholder="Nome">
-                    </label>
+                    <label  for="nome" class="label-input"></label>
+                    <i class="fa-regular fa-user icon"></i>
+                    <input type="text" placeholder="Nome">
 
-                    <label class="label-input">
-                        <i class="fa-regular fa-envelope icon"></i>
-                        <input type="email" placeholder="E-mail">
-                    </label>
+                    <label for="email" class="label-input"></label>
+                    <i class="fa-regular fa-envelope icon"></i>
+                    <input type="email" placeholder="E-mail">
 
-                    <label class="label-input">
-                        <i class="fa-solid fa-lock-open icon"></i>
-                        <input type="password" placeholder="Senha">
-                    </label>
+                    <label for="senha" class="label-input"></label>
+                    <i class="fa-solid fa-lock-open icon"></i>
+                    <input type="password" placeholder="Senha">
 
-                    <button class="btn2"> <a href="{{ url_for('cadastrar') }}">Registrar</a></button>
+                    <button class="btn2"> <a href="{{ url_for('index') }}">Registrar</a></button>
 
                 </form>
+
 
 
             </div>
