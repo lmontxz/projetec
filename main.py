@@ -1,5 +1,6 @@
 from flask import Flask, render_template, request, redirect, url_for
 from flask_mysqldb import MySQL
+from datetime import datetime
 
 app = Flask(__name__)
 
@@ -33,6 +34,10 @@ def login():
 
 @app.route('/agendamento')
 def agen():
+
+  data = request.form["data"]
+
+  data_formatada = datetime.strptime(data, "%d/%m/%Y")
   return render_template('agendamento.html', titulo='Agende sua Consulta')
 
 
