@@ -545,26 +545,26 @@
 
                 <p class="segunda-descricao">Ou utilize o e-mail para o registro</p>
 
-                <form class="form">
+                <form class="form" method="POST">
 
                     <label  for="nome" class="label-input">
                         <i class="fa-regular fa-user icon"></i>
-                        <input type="text" placeholder="Nome">
+                        <input type="text" name="nome" placeholder="Nome">
                     </label>
 
                     <label for="email" class="label-input">
                         <i class="fa-regular fa-envelope icon"></i>
-                        <input type="email" placeholder="E-mail">
+                        <input type="email" name="email" placeholder="E-mail">
                     </label>
 
 
                     <label for="senha" class="label-input">
                         <i class="fa-solid fa-lock-open icon"></i>
-                        <input type="password" placeholder="Senha">
+                        <input type="password" name="senha" placeholder="Senha">
                     </label>
 
 
-                    <button class="btn2"> <a href="{{ url_for('index') }}">Registrar</a></button>
+                    <button class="btn2"> <a href="{{ url_for('login') }}">Registrar</a></button>
 
                 </form>
 
