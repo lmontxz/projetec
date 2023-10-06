@@ -174,6 +174,8 @@ function make_appointment() {
                 title: 'SUCESSO',
                 message: 'Consulta marcada',
             });
+            form =  document.getElementById("agenda");
+            form.submit();
         } else {
             clear_input();
             iziToast.error({
@@ -386,9 +388,25 @@ function SaveDataToLocalStorage(data)
         if (temp1 > temp2) return 1;
         if (temp1 < temp2) return -1;
     });
-    localStorage.setItem('tbAppointment', JSON.stringify(a));
-}
 
+    fetch('/agendamento', {
+            // Tipo da requisição
+            method: "POST",
+                
+            // Dados a serem enviados na requisição
+            body: JSON.stringify({
+                
+            }),
+        }).then(function (response) {
+            // Caso a requisição tenha sucesso irá cair aqui
+            localStorage.setItem('tbAppointment', JSON.stringify(a));
+            return response.json();
+        })
+        .catch(function (error) {
+            // Caso dê algum erro na request, irá cair aqui
+            console.log(error);
+        });
+}
 function clear_storage(){
     localStorage.clear();
     var arrAppointment = [];

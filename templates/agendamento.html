@@ -11,7 +11,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Reem+Kufi&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Salsa&display=swap" rel="stylesheet">
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
     <link rel="shortcut icon" type="imagex/png" href="https://i.ibb.co/km4SXZg/Prototipo-removebg-preview.png">
 
 </head>
@@ -184,44 +184,47 @@
         <br>
         <hr>
 
-        <div class="row">
-            <div class="col offset-md-1">
-                <form id="form_create_appointment">
-                    <div class="form-row">
-                        <div class="col form-group">
-                            <label class="required">Data</label>
-                            <input class="form-control date-input" type="text" id="date" data-trigger="hover"
-                                data-toggle="popover" title="Date"
-                                data-content="You can select any date from today clicking on the number in the calendar"
-                                required>
+        <form id="agenda" action="" method="POST">
+            <div class="row">
+                <div class="col offset-md-1">
+                    <form id="form_create_appointment">
+                        <div class="form-row">
+                            <div class="col form-group">
+                                <label class="required" for="data">Data</label>
+                                <input class="form-control date-input" type="text" id="date" data-trigger="hover"
+                                    data-toggle="popover" title="Date" name="data"
+                                    data-content="You can select any date from today clicking on the number in the calendar"
+                                    required>
+                            </div>
+                            <div class="col form-group">
+                                <label for="descricao">Descrição</label>
+                                <input class="form-control" type="text" name="descricao" id="description">
+                            </div>
                         </div>
-                        <div class="col form-group">
-                            <label>Descrição</label>
-                            <input class="form-control" type="text" id="description">
+                        <div class="form-row">
+                            <div class="col form-group">
+                                <label class="required" for="inicio">Início</label>
+                                <input class="form-control time-input" type="text" id="start_time"  name="inicio" required>
+                            </div>
+                            <div class="col form-group">
+                                <label class="required" for="termino">Término</label>
+                                <input class="form-control time-input" name="termino" type="text" id="end_time" required>
+                            </div>
                         </div>
-                    </div>
-                    <div class="form-row">
-                        <div class="col form-group">
-                            <label class="required">Início</label>
-                            <input class="form-control time-input" type="text" id="start_time" required>
+                        <div class="form-row">
+                            <div class="col form-group">
+                                <button type="button" class="btn btn-warning btn-block" id="clear"
+                                    onclick="clear_input()">Limpar</button>
+                            </div>
+                            <div class="col form-group">
+                                <button type="button" class="btn btn-primary btn-block" id="submit"
+                                    onclick="make_appointment()" disabled="disabled"><a href="{{ url_for('agen') }}">Marcar</a></button>
+                            </div>
                         </div>
-                        <div class="col form-group">
-                            <label class="required">Término</label>
-                            <input class="form-control time-input" type="text" id="end_time" required>
-                        </div>
-                    </div>
-                    <div class="form-row">
-                        <div class="col form-group">
-                            <button type="button" class="btn btn-warning btn-block" id="clear"
-                                onclick="clear_input()">Limpar</button>
-                        </div>
-                        <div class="col form-group">
-                            <button type="button" class="btn btn-primary btn-block" id="submit"
-                                onclick="make_appointment()" disabled="disabled">Marcar</button>
-                        </div>
-                    </div>
-                </form>
-            </div>
+                    </form>
+                </div>
+        </form>
+
             <div class="col offset-md-1">
                 <div class="row">
                     <div class="col">

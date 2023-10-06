@@ -56,6 +56,11 @@
             font-weight: bold;
         }
 
+        #botaoreg {
+            text-decoration: none;
+            color: #000;
+        }
+
         .descricao {
             font-size: 14px;
             font-weight: 500;
@@ -564,7 +569,7 @@
                     </label>
 
 
-                    <button class="btn2"> <a href="{{ url_for('login') }}">Registrar</a></button>
+                    <button class="btn2"> <a id="botaoreg" href="{{ url_for('login') }}">Registrar</a></button>
 
                 </form>
 
