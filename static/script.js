@@ -407,6 +407,7 @@ function SaveDataToLocalStorage(data)
             console.log(error);
         });
 }
+
 function clear_storage(){
     localStorage.clear();
     var arrAppointment = [];
@@ -451,11 +452,6 @@ function update_appointment() {
         start_time: $("#start_time").val(),
         end_time: $("#end_time").val(),
     };
-
-    // Adicione o compromisso editado ao armazenamento local
-    SaveDataToLocalStorage(appointment);
-
-    // Limpe os campos de entrada e redefina o botão "submit" para criar compromissos
     clear_input();
     $("#submit").attr("data-editing", "false");
 }

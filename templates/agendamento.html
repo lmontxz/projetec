@@ -184,7 +184,7 @@
         <br>
         <hr>
 
-        <form id="agenda" action="" method="POST">
+        <form id="agenda" method="POST">
             <div class="row">
                 <div class="col offset-md-1">
                     <form id="form_create_appointment">
@@ -217,8 +217,7 @@
                                     onclick="clear_input()">Limpar</button>
                             </div>
                             <div class="col form-group">
-                                <button type="button" class="btn btn-primary btn-block" id="submit"
-                                    onclick="make_appointment()" disabled="disabled"><a href="{{ url_for('agen') }}">Marcar</a></button>
+                                <input type="submit" class="btn btn-primary btn-block" id="submit" onclick="make_appointment()" disabled="disabled">
                             </div>
                         </div>
                     </form>
