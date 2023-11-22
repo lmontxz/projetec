@@ -15,7 +15,6 @@ mysql = MySQL(app)
 def index():
     cur = mysql.connection.cursor()
     cur.execute('SELECT * FROM login')
-    cur.execute('SELECT * FROM consulta')
     data = cur.fetchall()
     cur.close()
     return render_template('home.html', login=data)
