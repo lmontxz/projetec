@@ -17,7 +17,8 @@ def index():
     cur.execute('SELECT * FROM login')
     data = cur.fetchall()
     cur.close()
-    return render_template('home.html', login=data)
+    usuario_logado = False  # Ajuste conforme sua lógica de autenticação
+    return render_template('home.html', login=data, usuario_logado=usuario_logado)
 
 @app.route('/login', methods=['GET', 'POST'])
 def login():
