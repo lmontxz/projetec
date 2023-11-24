@@ -36,25 +36,16 @@ def login():
 @app.route('/agendamento', methods=['GET', 'POST'])
 def agendamento():
       if request.method == 'POST':
-        print("tentar")
-        print(request)
         dados = request.get_json()
         data = dados['data']
-        print(data)
         data = datetime.strptime(data, "%d/%m/%Y")
-        print(data)
         descricao = dados['descricao']
-        print(descricao)
-
         inicio = dados['inicio']
         termino = dados['termino']
-        print(data)
-        print(termino)
         cur = mysql.connection.cursor()
         cur.execute('INSERT INTO consulta (data, descricao, inicio, termino) VALUES (%s, %s, %s, %s)', (data, descricao, inicio, termino))
         mysql.connection.commit()
         cur.close()
-        print("CERTO!")
         return redirect(url_for('index'))
       return render_template('agendamento.html', titulo='Agende sua Consulta')
 

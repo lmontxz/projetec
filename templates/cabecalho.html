@@ -14,10 +14,6 @@
 
     <style>
         
-        .hidden {
-            display: none !important;
-        }
-
         * {
             text-decoration: none;
             font-family: 'Reem Kufi';
@@ -27,7 +23,7 @@
             font-weight: bold;
         }
 
-        body {
+        /* body {
             font-family: 'Open Sans', sans-serif;
             font-weight: 300;
             line-height: 1.42em;
@@ -35,7 +31,7 @@
             font-family: Reem Kufi;
             color: #000;
 
-        }  
+        }  */
 
         header {
             position: fixed;
@@ -209,7 +205,6 @@
         <label for="menu-bar">Menu</label>
 
         <nav class="navbar">
-
             <ul>
                 <li><a href="#">Informações</a>
                     <ul>
@@ -225,14 +220,12 @@
                     </ul>
                 </li>
 
-                <li {% if usuario_logado %} style="display: none;" {% else %}
-                    style="background-color:#0066FF; border-radius: 50px; margin-left: 10px; max-width: 40vw; text-align: center;"
-                    {% endif %}>
-                    <a href='login' id="entrar">Entrar</a>
+                <li
+                    style="background-color:#0066FF; border-radius: 50px; margin-left: 10px; max-width: 40vw; text-align: center;">
+                    <a href='/login' id="registrar">Registrar</a>
                 </li>
 
             </ul>
-
 
             <button id="toggle">
                 <i class="fa fa-lg fa-bars"></i>
