@@ -151,24 +151,33 @@ $("#days td.inactive").on("click", function () {
     });
 });
 
-function make_appointment() {
+async function make_appointment() {
     if (is_empty() == false) {
         is_past_date();
         compare();
         if (is_overlap() == false) {
             var appointment = {
                 id: $("#date").inputmask('unmaskedvalue')+$("#start_time").inputmask('unmaskedvalue')+$("#end_time").inputmask('unmaskedvalue'),
-                date: $("#date").val(),
-                description: $("#description").val(),
-                start_time: $("#start_time").val(),
-                end_time: $("#end_time").val(),
+                data: $("#date").val(),
+                descricao: $("#description").val(),
+                inicio: $("#start_time").val(),
+                termino: $("#end_time").val(),
             };
-
-            SaveDataToLocalStorage(appointment);
-            $("#btn_clear_storage").prop('disabled', false);
-            $(`#btn_clear_storage`).show();
-            print();
-
+            
+            const response = await fetch("/agendamento", {
+                method: "POST", // *GET, POST, PUT, DELETE, etc.
+                mode: "cors", // no-cors, *cors, same-origin
+                cache: "no-cache", // *default, no-cache, reload, force-cache, only-if-cached
+                credentials: "same-origin", // include, *same-origin, omit
+                headers: {
+                  "Content-Type": "application/json",
+                  // 'Content-Type': 'application/x-www-form-urlencoded',
+                },
+                redirect: "follow", // manual, *follow, error
+                referrerPolicy: "no-referrer", // no-referrer, *no-referrer-when-downgrade, origin, origin-when-cross-origin, same-origin, strict-origin, strict-origin-when-cross-origin, unsafe-url
+                body: JSON.stringify(appointment), // body data type must match "Content-Type" header
+              });
+              
             clear_input();
             iziToast.success({
                 title: 'SUCESSO',
