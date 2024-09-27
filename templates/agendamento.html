@@ -7,7 +7,7 @@
     <meta charset="utf-8">
     <link rel='stylesheet' href='https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css'>
     <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/izitoast/1.4.0/css/iziToast.min.css'>
-    <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+    <link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.6.3/css/all.css'>
     <link href="https://fonts.googleapis.com/css2?family=Reem+Kufi&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Salsa&display=swap" rel="stylesheet">
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
@@ -17,7 +17,6 @@
 </head>
 
 <style>
-    
     * {
         text-decoration: none;
         font-family: 'Reem Kufi';
@@ -141,37 +140,13 @@
             width: 12.2%;
         }
     }
-
-    #profissa {
-        font-size: 30px;
-        margin-top: 40%;
-        text-align: center;
-    }
-
-    #toggle {
-        margin-right: -80px;
-        margin-top: -15px;
-    }
-
-    a.logo,
-    a#registrar, 
-    a#um {
-        text-decoration: none;
-    }
-
-
 </style>
 
 <body>
 
-    {% include 'cabecalho.html' %}
-
     <br><br>
 
     <div class="container">
-
-        <p id="profissa"> Michelle Soares</p>        
-
         <div class="row">
         </div>
         <br>
@@ -208,20 +183,20 @@
         <br>
         <hr>
 
-        <form class="form" action="/agendamento" method="POST"> 
-            <div class="row">
+        <div class="row">
             <div class="col offset-md-1">
+                <form id="form_create_appointment">
                     <div class="form-row">
                         <div class="col form-group">
                             <label class="required">Data</label>
-                            <input class="form-control date-input" type="text" id="date" data-trigger="hover" name="data"
+                            <input class="form-control date-input" type="text" id="date" data-trigger="hover"
                                 data-toggle="popover" title="Date"
                                 data-content="You can select any date from today clicking on the number in the calendar"
                                 required>
                         </div>
                         <div class="col form-group">
                             <label>Descrição</label>
-                            <input class="form-control" type="text" id="description" name="descricao">
+                            <input class="form-control" type="text" id="description">
                         </div>
                     </div>
                     <div class="form-row">
@@ -240,13 +215,11 @@
                                 onclick="clear_input()">Limpar</button>
                         </div>
                         <div class="col form-group">
-                            <button type="button" type="submit" class="btn btn-primary btn-block" id="submit"
-                                onclick="return make_appointment()" disabled="disabled" > Marcar</button>
+                            <button type="button" class="btn btn-primary btn-block" id="submit"
+                                onclick="make_appointment()" disabled="disabled">Marcar</button>
                         </div>
                     </div>
-        </form>
-
-       
+                </form>
             </div>
             <div class="col offset-md-1">
                 <div class="row">
