@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
@@ -7,23 +7,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css2?family=Reem+Kufi&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Salsa&display=swap" rel="stylesheet">
+    <link rel='stylesheet' href="{{ url_for('static', filename='estilo.css') }}">
 
 </head>
 
 <body>
 
     <style>
-        
+
         * {
             text-decoration: none;
             font-family: 'Reem Kufi';
         }
 
         p.logo {
-            font-weight: bold;
+          font-weight: bold;
         }
 
-        /* body {
+         /* body {
             font-family: 'Open Sans', sans-serif;
             font-weight: 300;
             line-height: 1.42em;
@@ -44,7 +45,6 @@
             align-items: center;
             justify-content: space-between;
             z-index: 1000;
-            text-decoration: none;
         }
 
         header .logo {
@@ -146,9 +146,9 @@
         @media(max-width:991px) {
 
             a.logo {
-                font-size: 20px;
+              font-size: 20px;
             }
-
+          
             header {
                 padding: 20px;
             }
@@ -206,24 +206,26 @@
 
         <nav class="navbar">
             <ul>
-                <li><a href="#" id="um">Informações</a>
+                <li><a href="#">Informações</a>
                     <ul>
-                        <li><a href="/sobre"id="um" >Sobre nós</a></li>
+                        <li><a href="/sobre">Sobre nós</a></li>
+                        <!-- <li><a href="#">Chamadas com Psicólogos</a></li> -->
                     </ul>
                 </li>
-                <li><a href="#" id="um">Contatos</a>
+                <li><a href="#">Contatos</a>
                     <ul>
-                        <li><a href="/psicologos" id="um" >Psicólogos</a></li>
-                        <li><a href="/psiquiatras"id="um" >Psquiatras</a></li>
-                        <li><a href="/psicanalistas"id="um" >Psicanalistas</a></li>
+                        <li><a href="/psicologos">Psicólogos</a></li>
+                        <li><a href="/psiquiatras">Psquiatras</a></li>
+                        <li><a href="/psicanalistas">Psicanalistas</a></li>
                     </ul>
                 </li>
 
                 <li
                     style="background-color:#0066FF; border-radius: 50px; margin-left: 10px; max-width: 40vw; text-align: center;">
-                    <a href='/login' id="registrar">Registrar</a>
-                </li>
-
+                    <a href='/login' id="registrar">Registrar</a></li>
+                <li
+                    style="background-color:#0066FF; border-radius: 50px; margin-left: 10px; max-width: 40vw; text-align: center;">
+                    <a href='login' id="entrar">Entrar</a></li>
             </ul>
 
             <button id="toggle">
