@@ -155,7 +155,31 @@
         padding: 5px 1em;
     }
 
-    /* ESTILO DO CALENDARIO */
+    @media (max-width: 768px) {
+
+      naveg {
+        margin-top: -30px;
+      }
+      
+      .wrapper {
+        width: 100%;
+        font-size: 90%;
+      }
+
+      .titulo1 {
+        text-align:center;
+      }
+
+      time {
+        font-size: 97%;
+      }
+
+      div.minhas-reservas-table-cell {
+        font-size: 70%;
+      }
+    }
+
+  /* ESTILO DO CALENDARIO */
 
 
     .tudo {
@@ -359,7 +383,7 @@
             <div class="container">
 
                 <div class="tab" id="reserva">
-                    <h1 style="color: #5995EE;">Futuras Consultas</h1>
+                    <h1 style="color: #5995EE;" class= "titulo1">Futuras Consultas</h1>
                     <div class="corpo-container-grid">
                         <div class="corpo">
                             <div class="div-corpo">
@@ -427,7 +451,7 @@
                 </div>
 
                 <div class="tab" id="minhas-reservas">
-                    <h1 style="color: #5995EE;">Consultas Antigas</h1>
+                    <h1 style="color: #5995EE;" class= "titulo1">Consultas Antigas</h1>
                     <div class="minhas-reservas-table">
 
                         <div class="minhas-reservas-table-cab">
@@ -472,6 +496,7 @@
             </div>
         </main>
     </div>
+    <!-- {% include 'rodape.html' %} -->
 
 </body>
 
