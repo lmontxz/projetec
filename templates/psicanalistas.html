@@ -29,11 +29,6 @@
 
     body {
         background-color: aliceblue;
-        height: 100vh;
-        width: 100%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
     }
 
     .perfis {
@@ -47,9 +42,11 @@
     @media screen and (max-width: 720px) {
 
         .perfis {
-            width: 60vw;
-            margin: auto;
-            display: inline;
+          width: 60vw;
+          margin: auto;
+          display: flex;
+          flex-direction: column;
+          margin-top: 150px;
         }
     }
 
@@ -188,6 +185,7 @@
 
 
     </div>
+    <!-- {% include 'rodape.html' %} -->
 
 </body>
 
